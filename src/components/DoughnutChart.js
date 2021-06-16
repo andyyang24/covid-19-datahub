@@ -1,5 +1,5 @@
 import React from "react";
-import { Pie } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2";
 import 'chartjs-plugin-labels';
 
 
@@ -15,7 +15,7 @@ export default function LineChart({ data1Labels, data1Numbers, line1Label, line1
         blue: 'rgba(54, 162, 235, 0.6)',
         purple: 'rgba(153, 102, 255, 0.6)',
         grey: 'rgba(201, 203, 207, 0.6)',
-        light: 'rgba(0, 0, 0, 0.02)',
+        light: 'rgba(0, 0, 0, 0.2)',
     };
 
     const lineDatasets = [
@@ -31,7 +31,7 @@ export default function LineChart({ data1Labels, data1Numbers, line1Label, line1
     ];
     return (
         <div>
-            <Pie
+            <Doughnut
                 data={{
                     labels: data1Labels,
                     datasets: lineDatasets,

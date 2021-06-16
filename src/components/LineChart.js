@@ -5,8 +5,12 @@ export default function LineChart({ data1Labels, data1Numbers, line1Label, line1
 
     const maxNumber1 = Math.round(Math.max(...data1Numbers) * 1.05);
     const minNumber1 = Math.round(Math.min(...data1Numbers) * 0.95);
-    const maxNumber2 = Math.round(Math.max(...data2Numbers) * 1.05);
-    const minNumber2 = Math.round(Math.min(...data2Numbers) * 0.95);
+    const maxNumber2 = 0;
+    const minNumber2 = 0;
+    if (line2Label) {
+        const maxNumber2 = Math.round(Math.max(...data2Numbers) * 1.05);
+        const minNumber2 = Math.round(Math.min(...data2Numbers) * 0.95);
+    }
 
     const lineDatasets = [
         {

@@ -27,7 +27,7 @@ export default function Nav(props) {
             <span className="text-left">
               <ChartBarIcon className="h-5 w-5 text-purple-500" />
             </span>
-            <span className="mx-2 text-sm font-normal"> Overview </span>
+            <span className="mx-2 text-sm font-normal"> Overviews </span>
           </a>
           <a
             className="
@@ -58,7 +58,7 @@ export default function Nav(props) {
               </svg>
             </span>
             <span className="mx-2 text-sm font-normal">
-              New Countries
+              Top Countries
               <span
                 className="
                     p-1
@@ -70,7 +70,7 @@ export default function Nav(props) {
                     text-gray-400 text-xs
                   "
               >
-                0
+                6
               </span>
             </span>
           </a>
