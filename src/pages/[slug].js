@@ -141,10 +141,25 @@ export default function Slug({ data, durationData }) {
                 </RightSection>
             </Main>
         </ >
-    )
+    );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+    // Call an external API endpoint to get posts
+    const res = await fetch('https://api.covid19api.com/summary')
+    const data = await res.json()
+
+    // Get the paths we want to pre-render based on posts
+    const paths = data.Countries.map((country) => ({
+        params: { slug: country.Slug },
+    }))
+
+    // We'll pre-render only these paths at build time.
+    // { fallback: false } means other routes should 404.
+    return { paths, fallback: false }
+}
+
+export async function getStaticProps({ params }) {
     const res = await fetch("https://api.covid19api.com/summary");
     const data = await res.json();
     const countrySelected = await data.Countries.filter(country => country.Slug == params.slug);
