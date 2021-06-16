@@ -5,7 +5,7 @@ import {
     getTotalNumber,
     getCountryList,
     calculatePercentage,
-} from "../pages/util.js";
+} from "./util.js";
 import BtnWithIcon from "../components/BtnWithIcon";
 
 export default function InfoCard(props) {

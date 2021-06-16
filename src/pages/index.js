@@ -20,7 +20,7 @@ import {
   getTotalNumber,
   getCountryList,
   calculatePercentage,
-} from "./util.js";
+} from "../components/util.js";
 
 export default function Home({ data }) {
   const updateDate = data.Date.split("T")[0];

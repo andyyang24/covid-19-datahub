@@ -9,7 +9,7 @@ import BtnWithIcon from "../components/BtnWithIcon";
 import MapLocator from "../components/MapLocator";
 import LineChart from "../components/LineChart";
 import BarChart from "../components/BarChart";
-import { every_nth } from "./util";
+import { every_nth } from "../components/util";
 import { ArrowCircleLeftIcon } from "@heroicons/react/solid";
 
 export default function Slug({ data, durationData }) {
