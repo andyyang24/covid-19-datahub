@@ -1,7 +1,5 @@
 import React from "react";
 import { Pie } from "react-chartjs-2";
-import 'chartjs-plugin-labels';
-
 
 export default function LineChart({ data1Labels, data1Numbers, line1Label, line1Color }) {
 
