@@ -70,7 +70,7 @@ export default function Home({ data }) {
             </h1>
 
             <div className="flex flex-col justify-between space-y-4 xl:flex-row items-center xl:space-x-4 xl:space-y-0 my-5">
-              <div className="2xl:w-1/2 transition ease-in duration-200 shadow-sm px-4 py-6 w-full bg-white bg-gradient-to-br from-white to-gray-200 hover:bg-white hover:bg-gradient-to-br hover:from-purple-100 hover:to-red-50 hover:shadow-2xl dark:bg-gray-700 relative rounded-xl">
+              <div className="xl:w-1/2 transition ease-in duration-200 shadow-sm px-4 py-6 w-full bg-white bg-gradient-to-br from-white to-gray-200 hover:bg-white hover:bg-gradient-to-br hover:from-purple-100 hover:to-red-50 hover:shadow-2xl dark:bg-gray-700 relative rounded-xl">
 
                 <h2 className="font-libre-baskerville block font-semibold text-xl text-center mt-4">
                   Overview of the World <GlobeAltIcon className="-mt-2 mx-0 inline-block h-8 w-8 text-black" />
@@ -88,7 +88,7 @@ export default function Home({ data }) {
                 </div>
               </div>
 
-              <div className="2xl:w-1/2 transition ease-in duration-200 shadow-sm px-4 py-6 w-full bg-white bg-gradient-to-br from-white to-gray-200 hover:bg-white hover:bg-gradient-to-br hover:from-purple-100 hover:to-red-50 hover:shadow-2xl dark:bg-gray-700 relative rounded-xl">
+              <div className="xl:w-1/2 transition ease-in duration-200 shadow-sm px-4 py-6 w-full bg-white bg-gradient-to-br from-white to-gray-200 hover:bg-white hover:bg-gradient-to-br hover:from-purple-100 hover:to-red-50 hover:shadow-2xl dark:bg-gray-700 relative rounded-xl">
 
                 <h2 className="font-libre-baskerville block font-semibold text-xl text-center mt-4">
                   Overview of Australia <img src="https://flagcdn.com/au.svg" className="-mt-2 mx-1  inline-block w-12 h-auto shadow-lg" alt="Australia" />

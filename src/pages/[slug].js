@@ -72,13 +72,13 @@ export default function Slug({ data, durationData }) {
                             </p>
                         </div>
 
-                        <div className="flex flex-col space-y-4 2xl:flex-row items-center 2xl:space-x-4 2xl:space-y-0  my-5">
+                        <div className="flex flex-col space-y-4 xl:flex-row items-center xl:space-x-4 xl:space-y-0  my-5">
 
                             {/* <div className="">
                                 <MapLocator />
                             </div> */}
 
-                            <div className="transition ease-in duration-200 shadow-none px-4 py-6 w-full bg-white bg-gradient-to-br from-white to-gray-50 hover:bg-white hover:bg-gradient-to-br hover:from-purple-100 hover:to-red-50 hover:shadow-2xl dark:bg-gray-700 relative rounded-xl">
+                            <div className="xl:w-1/2 transition ease-in duration-200 shadow-none px-4 py-6 w-full bg-white bg-gradient-to-br from-white to-gray-50 hover:bg-white hover:bg-gradient-to-br hover:from-purple-100 hover:to-red-50 hover:shadow-2xl dark:bg-gray-700 relative rounded-xl">
 
                                 <h2 className="font-libre-baskerville block font-semibold text-xl text-center mt-4">
                                     Confirmed & Active Cases
@@ -101,7 +101,7 @@ export default function Slug({ data, durationData }) {
                                 </div>
                             </div>
 
-                            <div className="transition ease-in duration-200 shadow-none px-4 py-6 w-full bg-white bg-gradient-to-br from-white to-gray-50 hover:bg-white hover:bg-gradient-to-br hover:from-purple-100 hover:to-red-50 hover:shadow-2xl dark:bg-gray-700 relative rounded-xl">
+                            <div className="xl:w-1/2 transition ease-in duration-200 shadow-none px-4 py-6 w-full bg-white bg-gradient-to-br from-white to-gray-50 hover:bg-white hover:bg-gradient-to-br hover:from-purple-100 hover:to-red-50 hover:shadow-2xl dark:bg-gray-700 relative rounded-xl">
 
                                 <h2 className="font-libre-baskerville block font-semibold text-xl text-center mt-4">
                                     Deaths & Recovered Cases
