@@ -13,7 +13,6 @@ import { every_nth } from "../components/util";
 import { ArrowCircleLeftIcon } from "@heroicons/react/solid";
 
 export default function Slug({ data, durationData }) {
-    //console.log(durationData);
     const updateDate = data.Date.split("T")[0];
     const countryName = data.Country;
     const countryCode = data.CountryCode;
@@ -143,7 +142,6 @@ export default function Slug({ data, durationData }) {
         </ >
     )
 }
-
 export async function getServerSideProps({ params }) {
     const res = await fetch("https://api.covid19api.com/summary");
     const data = await res.json();

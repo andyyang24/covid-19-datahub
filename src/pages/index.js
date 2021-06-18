@@ -65,7 +65,7 @@ export default function Home({ data }) {
           <MobileHeader />
           <div name="overviews" className="overflow-auto h-screen pt-0 pb-24 px-4 md:px-6">
             <h1 className="font-libre-baskerville block text-4xl md:text-5xl mt-10 mb-10 mx-5em font-bold  text-center text-gray-800 dark:text-white">
-              COVID-19<br className="sm:hidden" />DATA HUB
+              COVID-19 <br className="sm:hidden" />DATA HUB
               <MapIcon className="-mt-2 mx-2 inline-block h-14 w-14 text-purple-500" />
             </h1>
 
@@ -181,7 +181,7 @@ export default function Home({ data }) {
   );
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const res = await fetch("https://api.covid19api.com/summary");
   const data = await res.json();
   return {
