@@ -163,7 +163,7 @@ export async function getStaticProps({ params }) {
     const res = await fetch("https://api.covid19api.com/summary");
     const data = await res.json();
     const countrySelected = await data.Countries.filter(country => country.Slug == params.slug);
-    const thisDate = data.Date.split("T")[0];
+    //const thisDate = data.Date.split("T")[0];
     //let previousWeekDate = new Date(data.Date.split("T")[0]);
     //previousWeekDate.setDate(previousWeekDate.getDate() - 7);
     //const previousDate = JSON.stringify(previousWeekDate).split('T')[0].replace('"', '');
@@ -171,10 +171,11 @@ export async function getStaticProps({ params }) {
 
     const res1 = await fetch(`https://api.covid19api.com/total/country/${params.slug}`);
     const duration = await res1.json();
-    let dr = duration.slice();
+    let dr = duration;
+    let fd = duration[0];
     dr = dr.reverse();
     let td = dr[0];
-    let fd = duration[0];
+    dr = dr.reverse();
     let durationLast = every_nth(duration, 92);
     durationLast.push(td);
     durationLast.unshift(fd);

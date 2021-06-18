@@ -2,7 +2,7 @@ import { ChartBarIcon } from "@heroicons/react/solid";
 
 export default function Nav(props) {
   return (
-    <div className="bg-white w-full h-full dark:bg-gray-700">
+    <div className="bg-gray-50 w-full h-full dark:bg-gray-700 shadow-md">
       <div className="flex items-center justify-start pt-6 ml-8">
         <p className="font-bold dark:text-white text-xl">{props.navTitle}</p>
       </div>

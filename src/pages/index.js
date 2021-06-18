@@ -69,11 +69,11 @@ export default function Home({ data }) {
               <MapIcon className="-mt-2 mx-2 inline-block h-14 w-14 text-purple-500" />
             </h1>
 
-            <div className="flex flex-col justify-between space-y-4 2xl:flex-row items-center 2xl:space-x-4 2xl:space-y-0 my-5">
+            <div className="flex flex-col justify-between space-y-4 xl:flex-row items-center xl:space-x-4 xl:space-y-0 my-5">
               <div className="2xl:w-1/2 transition ease-in duration-200 shadow-sm px-4 py-6 w-full bg-white bg-gradient-to-br from-white to-gray-200 hover:bg-white hover:bg-gradient-to-br hover:from-purple-100 hover:to-red-50 hover:shadow-2xl dark:bg-gray-700 relative rounded-xl">
 
                 <h2 className="font-libre-baskerville block font-semibold text-xl text-center mt-4">
-                  Overview of the World <GlobeAltIcon className="-mt-2 mx-1 inline-block h-8 w-8 text-black" />
+                  Overview of the World <GlobeAltIcon className="-mt-2 mx-0 inline-block h-8 w-8 text-black" />
                 </h2>
                 <p className="text-sm text-gray-600 text-center mt-2 mb-5">
                   Lastest Update: {updateDate}
