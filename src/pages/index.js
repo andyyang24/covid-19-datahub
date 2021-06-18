@@ -67,7 +67,7 @@ export default function Home({ data }) {
             <h1 className="font-libre-baskerville block text-4xl md:text-5xl mt-10 mb-10 mx-5em font-bold  text-center text-gray-800 dark:text-white">
               COVID-19 <br className="sm:hidden" />DATA HUB
               <MapIcon className="-mt-2 mx-2 inline-block h-14 w-14 text-purple-500" /><br className="sm:hidden" />
-              v0.1
+              <span className="text-xs">V.0.2.1</span>
             </h1>
 
             <div className="flex flex-col justify-between space-y-4 xl:flex-row items-center xl:space-x-4 xl:space-y-0 my-5">
