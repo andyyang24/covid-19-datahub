@@ -141,31 +141,13 @@ export default function Slug({ data, durationData }) {
                 </RightSection>
             </Main>
         </ >
-    );
+    )
 }
 
-export async function getStaticPaths() {
-    // Call an external API endpoint to get posts
-    const res = await fetch('https://api.covid19api.com/summary')
-    const data = await res.json()
-
-    // Get the paths we want to pre-render based on posts
-    const paths = data.Countries.map((country) => ({
-        params: { slug: country.Slug },
-    }))
-
-    // We'll pre-render only these paths at build time.
-    // { fallback: false } means other routes should 404.
-    return { paths, fallback: false }
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
     const res = await fetch("https://api.covid19api.com/summary");
     const data = await res.json();
-    const countrySelected = await data.Countries;
-    if (countrySelected) {
-        countrySelected.filter(country => country.Slug == params.slug);
-    }
+    const countrySelected = await data.Countries.filter(country => country.Slug == params.slug);
     //const thisDate = data.Date.split("T")[0];
     //let previousWeekDate = new Date(data.Date.split("T")[0]);
     //previousWeekDate.setDate(previousWeekDate.getDate() - 7);
@@ -174,17 +156,20 @@ export async function getStaticProps({ params }) {
 
     const res1 = await fetch(`https://api.covid19api.com/total/country/${params.slug}`);
     const duration = await res1.json();
-    let durationLast;
-    if (duration) {
-        let dr = duration;
-        let fd = duration[0];
-        dr = dr.reverse();
-        let td = dr[0];
-        dr = dr.reverse();
-        durationLast = every_nth(duration, 92);
-        durationLast.push(td);
-        durationLast.unshift(fd);
+
+    let dr = [];
+
+    for (var i in duration) {
+        dr.push(duration[i]);
     }
+    let firstDay = dr[0];
+    dr.reverse();
+    let todayDay = dr[0];
+    let durationLast = every_nth(dr, 92);
+    durationLast.reverse();
+    durationLast.push(todayDay);
+    durationLast.unshift(firstDay);
+    console.log(durationLast);
     return {
         props: { data: countrySelected[0], durationData: durationLast }
     }
