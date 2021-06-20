@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Main from "../components/Main";
@@ -43,6 +44,12 @@ export default function Slug({ data, durationData }) {
         return duration.Active;
     });
 
+    const [isActive, setActive] = useState("false");
+    const mobileNavToggle = () => {
+        setActive(!isActive);
+        console.log(isActive);
+    };
+
     return (
         <>
             <Head>
@@ -53,11 +60,11 @@ export default function Slug({ data, durationData }) {
                 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
             </Head>
             <Main>
-                <LeftSection>
+                <LeftSection displayed={isActive}>
                     <Nav navTitle="Links" />
                 </LeftSection>
                 <RightSection>
-                    <MobileHeader />
+                    <MobileHeader toggleClick={mobileNavToggle} />
                     <div className="overflow-auto h-screen pt-0 pb-24 px-4 md:px-6">
                         <div className="flex flex-col items-center my-5">
                             <img
