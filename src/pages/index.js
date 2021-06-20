@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+import ReactTypingEffect from 'react-typing-effect';
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,12 +10,12 @@ import Nav from "../components/Nav";
 import MobileHeader from "../components/MobileHeader";
 import HeroCard from "../components/HeroCard";
 import InfoCard from "../components/InfoCard";
+import BtnWithIcon from "../components/BtnWithIcon";
 import SwitchToggle from "../components/SwitchToggle";
 import PieChart from "../components/PieChart"
 import LineChart from "../components/LineChart"
 import DoughnutChart from "../components/DoughnutChart"
-
-import { MapIcon, GlobeAltIcon } from "@heroicons/react/solid";
+import { MapIcon, GlobeAltIcon, ChartBarIcon } from "@heroicons/react/solid";
 
 import {
   numberWithCommas,
@@ -49,6 +51,11 @@ export default function Home({ data }) {
     return country.TotalConfirmed;
   });
 
+  const [isActive, setActive] = useState("false");
+  const mobileNavToggle = () => {
+    setActive(!isActive);
+    console.log(isActive);
+  };
 
   return (
     <>
@@ -58,15 +65,23 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <Main>
-        <LeftSection>
+        <LeftSection displayed={isActive}>
           <Nav navTitle="Links" />
         </LeftSection>
         <RightSection>
-          <MobileHeader />
+          <MobileHeader toggleClick={mobileNavToggle} />
           <div name="overviews" className="overflow-auto h-screen pt-0 pb-24 px-4 md:px-6">
+
             <h1 className="font-libre-baskerville block text-4xl md:text-5xl mt-10 mb-10 mx-5em font-bold  text-center text-gray-800 dark:text-white">
-              COVID-19 <br className="sm:hidden" />DATA HUB
-              <MapIcon className="-mt-2 mx-2 inline-block h-14 w-14 text-purple-500" /><br className="sm:hidden" />
+              COVID-19 <br /> <ReactTypingEffect
+                text={["Data Hub", "Data Charts", "Mobile Center", "Dashboard"]}
+                speed="100"
+                eraseSpeed="50"
+                eraseDelay="4000"
+                typingDelay="10"
+              />
+              <br />
+              <MapIcon className="mt-2 mx-2 inline-block h-14 w-14 text-purple-500" />
               <span className="text-xs">V.0.2.1</span>
             </h1>
 
@@ -86,6 +101,14 @@ export default function Home({ data }) {
                     line1Label="Recovered"
                     line1Color="76, 212, 185"
                   />
+                  <div className="flex justify-center items-center mx-4 mt-4 ">
+                    <Link href="/australia">
+                      <a><BtnWithIcon>
+                        <ChartBarIcon className="flex h-4 w-4" />
+                        <span className="flex text-xs">More Data</span>
+                      </BtnWithIcon>
+                      </a></Link>
+                  </div>
                 </div>
               </div>
 
@@ -108,6 +131,14 @@ export default function Home({ data }) {
                     line1Label="Total Cases"
                     line1Color="76, 212, 185"
                   />
+                  <div className="flex justify-center items-center mx-4 mt-4 ">
+                    <Link href="/australia">
+                      <a><BtnWithIcon>
+                        <ChartBarIcon className="flex h-4 w-4" />
+                        <span className="flex text-xs">More Data</span>
+                      </BtnWithIcon>
+                      </a></Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -135,13 +166,13 @@ export default function Home({ data }) {
                   totalConfirmedNumber
                 )}
                 card5Title="Fully Vaccinated"
-                card5Number="480,259,387"
+                card5Number="748,099,346"
               />
             </div>
 
-            <h2 className="font-libre-baskerville block font-semibold text-xl text-center mt-10">
-              <span className="block p-2 text-2xl">
-                {countriesList.length} Countries
+            <h2 className="font-libre-baskerville block font-semibold text-lg text-center mt-10">
+              <span className="block p-2 text-3xl">
+                Top {countriesList.length} Countries
               </span>
               with Total Confirmed Cases over
               <span className="block p-2 text-2xl">

@@ -1,11 +1,11 @@
-import { MenuIcon } from "@heroicons/react/solid";
-import { LinkIcon } from "@heroicons/react/solid";
+import { MenuIcon, LinkIcon } from "@heroicons/react/solid";
 
 export default function MobileHeader(props) {
   return (
     <header className="w-full h-16 z-40 flex items-center bg-gray-200 justify-between shadow-md">
       <div className="block mt-2 p-1 lg:hidden ml-4">
         <button
+          onClick={props.toggleClick}
           className="
               flex
               p-2

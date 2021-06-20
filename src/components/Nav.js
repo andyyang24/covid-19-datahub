@@ -22,7 +22,7 @@ export default function Nav(props) {
                 justify-start
                 border-l-4 border-purple-500
               "
-            href="/"
+            href="#overview"
           >
             <span className="text-left">
               <ChartBarIcon className="h-5 w-5 text-purple-500" />

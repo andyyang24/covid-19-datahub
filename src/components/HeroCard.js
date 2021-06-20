@@ -86,7 +86,7 @@ export default function HeroCard(props) {
                                 <ArrowSmUpIcon className="-mt-1 inline-block h-6 w-6 text-green-500" />
                             </p>
                             <p className="text-gray-400 text-xs">{props.card5Title}(≈
-                                <strong className="text-xs">6.2%</strong>)</p>
+                                <strong className="text-xs">9.6%</strong>)</p>
                             <span className="rounded-full absolute p-1 bg-green-600 top-2 right-4">
                                 <ShieldCheckIcon className="h-5 w-5 text-white" />
                             </span>
